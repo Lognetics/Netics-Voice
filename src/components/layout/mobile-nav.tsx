@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -13,8 +14,10 @@ import { cn } from "@/lib/utils";
 /** Slide-in navigation drawer for tablet/mobile (< lg). */
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
   const pathname = usePathname();
 
+  React.useEffect(() => setMounted(true), []);
   React.useEffect(() => setOpen(false), [pathname]);
 
   return (
@@ -27,9 +30,13 @@ export function MobileNav() {
         <Menu className="h-5 w-5" />
       </button>
 
-      <AnimatePresence>
-        {open && (
-          <>
+      {/* Portal to <body> so `position: fixed` is relative to the viewport,
+          not the backdrop-blurred header (which would trap + clip the drawer). */}
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {open && (
+              <>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -94,9 +101,11 @@ export function MobileNav() {
                 ))}
               </nav>
             </motion.aside>
-          </>
+              </>
+            )}
+          </AnimatePresence>,
+          document.body
         )}
-      </AnimatePresence>
     </>
   );
 }

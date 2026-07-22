@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LiveDot } from "@/components/shared/indicators";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 import {
   DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
   DropdownMenuSeparator, DropdownMenuTrigger,
@@ -96,6 +97,9 @@ export function Topbar() {
         {aiPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
         {aiPaused ? "AI Paused" : "AI Active"}
       </Button>
+
+      {/* Theme toggle */}
+      <ThemeToggle />
 
       {/* Notifications */}
       <DropdownMenu>

@@ -16,13 +16,13 @@ const config: Config = {
     },
     extend: {
       colors: {
-        // NETICS brand palette
+        // NETICS surface palette — driven by CSS vars so it flips with the theme.
         base: {
-          bg: "#080B14",
-          primary: "#0B0F1A",
-          secondary: "#151C2E",
-          card: "#121826",
-          elevated: "#1A2236",
+          bg: "rgb(var(--base-bg) / <alpha-value>)",
+          primary: "rgb(var(--base-primary) / <alpha-value>)",
+          secondary: "rgb(var(--base-secondary) / <alpha-value>)",
+          card: "rgb(var(--base-card) / <alpha-value>)",
+          elevated: "rgb(var(--base-elevated) / <alpha-value>)",
         },
         gold: {
           DEFAULT: "#C9A227",
