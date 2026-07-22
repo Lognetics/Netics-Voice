@@ -6,9 +6,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import * as Icons from "lucide-react";
 import {
   ArrowLeft, ArrowRight, Check, Rocket, Building2, Sparkles, Clock,
-  BookOpen, AudioLines, UploadCloud, Loader2,
+  BookOpen, AudioLines, UploadCloud, Loader2, Play,
 } from "lucide-react";
 import { toast } from "sonner";
+import { speak } from "@/lib/speech";
 import { Logo } from "@/components/shared/logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -60,7 +61,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen overflow-x-hidden">
       <div className="pointer-events-none absolute inset-0 bg-mesh opacity-40" />
       <div className="relative mx-auto flex min-h-screen max-w-3xl flex-col px-6 py-8">
         {/* header */}
@@ -322,6 +323,30 @@ function AIStep({
                 {v.gender} · {v.accent} · {v.tone}
               </p>
               {active && <VoiceWaveform active bars={20} className="mt-3 h-6" />}
+              <span
+                role="button"
+                tabIndex={0}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  speak(
+                    `Hi, this is ${v.name}. ${template.greeting}`,
+                    { gender: v.gender, accent: v.accent, langName: "English" }
+                  );
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.stopPropagation();
+                    speak(`Hi, this is ${v.name}. ${template.greeting}`, {
+                      gender: v.gender,
+                      accent: v.accent,
+                      langName: "English",
+                    });
+                  }
+                }}
+                className="mt-3 inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium text-brand transition-colors hover:bg-brand/10"
+              >
+                <Play className="h-3 w-3" /> Play sample
+              </span>
             </button>
           );
         })}

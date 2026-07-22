@@ -43,6 +43,7 @@ import {
 import { VOICES, LANGUAGES } from "@/lib/constants";
 import { aiAgents } from "@/lib/mock";
 import { cn } from "@/lib/utils";
+import { speak, stopSpeaking, speechSupported } from "@/lib/speech";
 
 import { RangeSlider } from "./_components/range-slider";
 
@@ -105,21 +106,44 @@ export default function VoiceSettingsPage() {
     [selectedVoice.name]
   );
 
-  function playSample(name: string) {
-    toast(`Playing ${name} sample`, {
+  // Clean up any speech when leaving the page.
+  React.useEffect(() => () => stopSpeaking(), []);
+
+  function playSample(v: (typeof VOICES)[number]) {
+    toast(`Playing ${v.name}`, {
       icon: "🔊",
-      description: `${selectedVoice.accent} accent · ${toneStyle.toLowerCase()} tone`,
+      description: `${v.accent} accent · ${v.tone.toLowerCase()} tone`,
     });
+    speak(
+      `Hi, this is ${v.name}. Thanks for calling Bella Cucina! How can I help you today?`,
+      { gender: v.gender, accent: v.accent, langName: "English", rate: speed, pitch01: pitch, emotion }
+    );
   }
 
   function testVoice() {
+    if (!speechSupported()) {
+      toast.error("Voice preview isn't supported in this browser");
+    }
     setTesting(true);
     toast.success("Testing voice", {
       description: `${selectedVoice.name} · ${language} · ${Math.round(
         emotion * 100
       )}% emotion`,
     });
-    window.setTimeout(() => setTesting(false), 3200);
+    const started = speak(greeting, {
+      gender,
+      accent,
+      langName: language,
+      rate: speed,
+      pitch01: pitch,
+      emotion,
+      onStart: () => setTesting(true),
+      onEnd: () => setTesting(false),
+    });
+    // Fallback in case speech is unavailable so the UI doesn't hang.
+    Promise.resolve(started).then((ok) => {
+      if (!ok) window.setTimeout(() => setTesting(false), 2400);
+    });
   }
 
   function save() {
@@ -230,12 +254,12 @@ export default function VoiceSettingsPage() {
                           tabIndex={0}
                           onClick={(e) => {
                             e.stopPropagation();
-                            playSample(v.name);
+                            playSample(v);
                           }}
                           onKeyDown={(e) => {
                             if (e.key === "Enter" || e.key === " ") {
                               e.stopPropagation();
-                              playSample(v.name);
+                              playSample(v);
                             }
                           }}
                           className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium text-brand transition-colors hover:bg-brand/10"

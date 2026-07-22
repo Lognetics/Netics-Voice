@@ -13,6 +13,7 @@ import {
   FIRST_NAMES,
   LAST_NAMES,
   CITIES,
+  NG_STREETS,
   RESTAURANT_ITEMS,
   INTENTS,
   LANG_CODES,
@@ -60,6 +61,25 @@ const id = (prefix: string, n: number) => `${prefix}_${(n + 1).toString().padSta
 const ago = (mins: number) => new Date(NOW.getTime() - mins * 60_000).toISOString();
 const ahead = (mins: number) => new Date(NOW.getTime() + mins * 60_000).toISOString();
 
+/* --- Phone numbers: mostly Nigerian (+234), mixed with other countries --- */
+const NG_PREFIXES = [
+  "803", "805", "806", "807", "808", "810", "813", "814", "816", "703",
+  "706", "708", "809", "817", "818", "901", "902", "903", "904", "905",
+  "906", "915", "916",
+];
+const ngPhone = () =>
+  `+234 ${pick(NG_PREFIXES)} ${int(100, 999)} ${int(1000, 9999)}`;
+const INTL_PHONES = [
+  () => `+1 (${int(200, 989)}) ${int(200, 999)}-${int(1000, 9999)}`,
+  () => `+44 20 ${int(7000, 7999)} ${int(1000, 9999)}`,
+  () => `+971 5${int(0, 9)} ${int(100, 999)} ${int(1000, 9999)}`,
+  () => `+233 ${int(20, 59)} ${int(100, 999)} ${int(1000, 9999)}`,
+  () => `+254 7${int(10, 99)} ${int(100, 999)} ${int(100, 999)}`,
+];
+/** ~70% Nigerian, ~30% international. */
+const mixedPhone = () =>
+  chance(0.7) ? ngPhone() : INTL_PHONES[int(0, INTL_PHONES.length - 1)]();
+
 const SENTIMENTS: Sentiment[] = ["positive", "neutral", "negative", "frustrated"];
 const CHANNELS: Channel[] = ["phone", "whatsapp", "instagram", "messenger", "webchat", "sms"];
 
@@ -78,12 +98,12 @@ export const organizations: Organization[] = [
     slug: "bella-cucina",
     industry: "restaurant",
     brandColor: "#FF4D4F",
-    website: "bellacucina.com",
-    timezone: "America/New_York",
-    languages: ["English", "Spanish", "Italian"],
+    website: "bellacucina.ng",
+    timezone: "Africa/Lagos",
+    languages: ["English", "Pidgin", "Yoruba", "Igbo"],
     plan: "enterprise",
     createdAt: ago(60 * 24 * 220),
-    phoneNumbers: ["+1 (212) 555-0148", "+1 (212) 555-0192"],
+    phoneNumbers: ["+234 803 555 0148", "+234 701 555 0192"],
     aiPersonality: "Warm, upbeat, and quick to recommend specials.",
     greeting: "Thanks for calling Bella Cucina! How can I help you today?",
     status: "active",
@@ -112,11 +132,11 @@ export const organizations: Organization[] = [
     industry: "hospital",
     brandColor: "#00C896",
     website: "stmarys.health",
-    timezone: "America/Chicago",
-    languages: ["English", "Spanish"],
+    timezone: "Africa/Lagos",
+    languages: ["English", "Hausa", "Pidgin"],
     plan: "growth",
     createdAt: ago(60 * 24 * 150),
-    phoneNumbers: ["+1 (312) 555-0110"],
+    phoneNumbers: ["+234 902 555 0110"],
     aiPersonality: "Calm, clear, and reassuring.",
     greeting: "Thank you for calling St. Mary's. How can I help you?",
     status: "active",
@@ -168,8 +188,8 @@ export const branches: Branch[] = Array.from({ length: 6 }, (_, i) => {
     name: `Bella Cucina - ${loc.city}`,
     city: loc.city,
     country: loc.country,
-    address: `${int(10, 990)} ${pick(["Oak", "Main", "Park", "River", "5th"])} St`,
-    phone: `+1 (212) 555-0${int(100, 999)}`,
+    address: `${int(1, 240)} ${pick(NG_STREETS)}`,
+    phone: mixedPhone(),
     timezone: currentOrg.timezone,
     status: pick(["open", "open", "open", "busy", "closed"]) as Branch["status"],
     managerName: fullName(i * 3),
@@ -205,14 +225,14 @@ export const employees: User[] = Array.from({ length: 25 }, (_, i) => {
     id: id("usr", i),
     orgId: currentOrg.id,
     name,
-    email: `${name.toLowerCase().replace(/[^a-z]/g, ".")}@bellacucina.com`,
+    email: `${name.toLowerCase().replace(/[^a-z]/g, ".")}@bellacucina.ng`,
     avatarUrl: avatarUrl(name),
     role,
     department: pick(departments).name,
     branchId: pick(branches).id,
     status: i < 6 ? "online" : pick(STATUSES),
     lastActive: ago(int(0, 480)),
-    phone: `+1 (212) 555-0${int(100, 999)}`,
+    phone: mixedPhone(),
     permissions: role === "owner" ? ["*"] : ["calls.view", "orders.edit", "bookings.edit"],
     callsHandled: int(120, 2400),
     csat: float(4.0, 4.9, 1),
@@ -237,7 +257,7 @@ export const customers: Customer[] = Array.from({ length: 500 }, (_, i) => {
     orgId: currentOrg.id,
     name,
     email: chance(0.85) ? `${name.toLowerCase().replace(/[^a-z]/g, "")}@mail.com` : undefined,
-    phone: `+1 (${int(200, 989)}) 555-${int(1000, 9999)}`,
+    phone: mixedPhone(),
     avatarUrl: avatarUrl(name + i),
     city: loc.city,
     country: loc.country,
@@ -289,7 +309,7 @@ function buildTranscript(intent: string, name: string): Call["transcript"] {
     push("customer", "Hi, I'd like to order a large pepperoni pizza.", "neutral");
     push("ai", "Great choice! Would you like to make it a combo with garlic bread and a drink for just $4 more?");
     push("customer", "Yeah, let's do that.", "positive");
-    push("ai", "Perfect - that's one large pepperoni combo for $18.90. Delivery to your usual address on Oak Street?");
+    push("ai", "Perfect - that's one large pepperoni combo for $18.90. Delivery to your usual address on Admiralty Way?");
     push("customer", "Yes please.", "positive");
     push("ai", "All set! Your order will arrive in about 35 minutes. Anything else?");
   } else if (intent === "Reserve table" || intent === "Book room" || intent === "Book appointment") {

@@ -10,7 +10,7 @@ export default function AuthLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid min-h-screen lg:grid-cols-2">
+    <div className="grid min-h-screen overflow-x-hidden lg:grid-cols-2">
       {/* Left - form */}
       <div className="flex flex-col px-6 py-8 sm:px-12">
         <Link href="/" className="inline-flex">

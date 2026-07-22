@@ -113,7 +113,7 @@ export function Hero() {
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Incoming call · +1 (212) 555-0148</p>
+                  <p className="text-sm font-medium">Incoming call · +234 803 555 0148</p>
                   <p className="text-xs text-muted-foreground">Aria · Front of House AI</p>
                 </div>
               </div>

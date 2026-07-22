@@ -45,7 +45,7 @@ const STAGES: Stage[] = [
   {
     icon: PhoneIncoming,
     label: "Call received",
-    detail: "Answered in under a second, day or night. No hold music, no missed calls.",
+    detail: "Answered in under a second, day or night, on +234 803 555 0148. No hold music, no missed calls.",
     accent: "#3A86FF",
   },
   {

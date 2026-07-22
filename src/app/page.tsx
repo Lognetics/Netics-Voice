@@ -15,7 +15,7 @@ import {
 
 export default function LandingPage() {
   return (
-    <main className="relative">
+    <main className="relative overflow-x-hidden">
       <LandingNav />
       <Hero />
       <Features />
