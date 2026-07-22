@@ -12,7 +12,7 @@ import { LiveDot, SentimentBadge } from "@/components/shared/indicators";
 const demoTurns = [
   { speaker: "ai", text: "Thanks for calling Bella Cucina! How can I help you today?" },
   { speaker: "customer", text: "Hi, I'd like a table for four this Saturday at 7." },
-  { speaker: "ai", text: "Perfect — I have a lovely window table at 7pm. Shall I book it, Mr. James?" },
+  { speaker: "ai", text: "Perfect - I have a lovely window table at 7pm. Shall I book it, Mr. James?" },
   { speaker: "customer", text: "Yes please, and add a birthday cake." },
   { speaker: "ai", text: "Done! Table for four, 7pm Saturday, with a birthday surprise. 🎉" },
 ];
@@ -63,7 +63,7 @@ export function Hero() {
             className="mt-6 max-w-xl text-lg text-muted-foreground"
           >
             NETICS Voice answers every call, books every table, takes every order and
-            resolves every request — in 150+ languages, across every channel, for any
+            resolves every request - in 150+ languages, across every channel, for any
             industry. It sounds human. It never sleeps.
           </motion.p>
 

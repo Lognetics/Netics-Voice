@@ -152,7 +152,7 @@ export function ApiKeysTab() {
             </DialogTitle>
             <DialogDescription>
               {generated
-                ? "Copy your key now — you won't be able to see it again."
+                ? "Copy your key now - you won't be able to see it again."
                 : "Give your key a descriptive name."}
             </DialogDescription>
           </DialogHeader>

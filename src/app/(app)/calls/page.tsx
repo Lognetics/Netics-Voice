@@ -58,7 +58,7 @@ export default function CallsPage() {
             </Badge>
             <Button
               variant="gold"
-              onClick={() => toast.success("Barge mode enabled — you'll be notified on low-confidence calls")}
+              onClick={() => toast.success("Barge mode enabled - you'll be notified on low-confidence calls")}
             >
               <Sparkles className="h-4 w-4" /> Barge mode
             </Button>

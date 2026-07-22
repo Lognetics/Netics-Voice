@@ -1,6 +1,6 @@
 import type { Channel } from "@/types";
 
-/** MessagingProvider — unifies WhatsApp / SMS / Instagram / Messenger / Telegram. */
+/** MessagingProvider - unifies WhatsApp / SMS / Instagram / Messenger / Telegram. */
 export interface MessagingProvider {
   send(channel: Channel, to: string, text: string): Promise<{ messageId: string }>;
   sendTemplate(

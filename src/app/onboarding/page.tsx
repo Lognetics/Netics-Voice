@@ -258,7 +258,7 @@ function HoursStep() {
   );
   return (
     <div>
-      <StepHeader title="Business hours" desc="The AI answers 24/7 — hours guide bookings and callbacks." />
+      <StepHeader title="Business hours" desc="The AI answers 24/7 - hours guide bookings and callbacks." />
       <Card className="divide-y divide-white/[0.06] p-0">
         {hours.map((h, i) => (
           <div key={h.day} className="flex items-center justify-between px-5 py-3">
@@ -352,7 +352,7 @@ function KnowledgeStep({
 }) {
   return (
     <div>
-      <StepHeader title="Feed your AI knowledge" desc="Upload documents or add a URL — the AI learns instantly." />
+      <StepHeader title="Feed your AI knowledge" desc="Upload documents or add a URL - the AI learns instantly." />
       <button
         onClick={() =>
           setFiles((f) => [...f, `Document ${f.length + 1}.pdf`])
@@ -362,7 +362,7 @@ function KnowledgeStep({
         <UploadCloud className="h-8 w-8 text-muted-foreground" />
         <p className="mt-3 text-sm font-medium">Drag & drop or click to upload</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          PDF, Word, Excel, CSV, images, menus, URLs — up to 50MB each
+          PDF, Word, Excel, CSV, images, menus, URLs - up to 50MB each
         </p>
       </button>
 
@@ -394,7 +394,7 @@ function LaunchStep({ template, voice }: { template: IndustryTemplate; voice: st
   const v = VOICES.find((x) => x.id === voice);
   return (
     <div>
-      <StepHeader title="Ready to launch 🚀" desc="Review your setup — your AI employee is one click away." />
+      <StepHeader title="Ready to launch 🚀" desc="Review your setup - your AI employee is one click away." />
       <Card className="p-6">
         <div className="grid gap-4 sm:grid-cols-2">
           <Row label="Business" value="Bella Cucina Group" />

@@ -130,7 +130,7 @@ export function RecentCalls({ calls }: { calls: Call[] }) {
                     <span className="truncate text-muted-foreground">{c.intent}</span>
                     <span><SentimentBadge sentiment={c.sentiment} showEmoji={false} /></span>
                     <span className="tabular text-muted-foreground">
-                      {c.status === "missed" ? "—" : formatDuration(c.durationSec)}
+                      {c.status === "missed" ? "-" : formatDuration(c.durationSec)}
                     </span>
                     <span
                       className={cn(
@@ -142,7 +142,7 @@ export function RecentCalls({ calls }: { calls: Call[] }) {
                       {c.aiHandled ? "AI" : "Human"}
                     </span>
                     <span className="tabular text-muted-foreground">
-                      {c.revenue ? formatCurrency(c.revenue) : "—"}
+                      {c.revenue ? formatCurrency(c.revenue) : "-"}
                     </span>
                     <ChevronRight className="hidden h-4 w-4 text-muted-foreground md:block" />
                   </Link>

@@ -8,6 +8,10 @@ import {
   CTA,
   Footer,
 } from "@/features/marketing/sections";
+import {
+  CallJourney,
+  PlatformArchitecture,
+} from "@/features/marketing/how-it-works-flow";
 
 export default function LandingPage() {
   return (
@@ -15,8 +19,10 @@ export default function LandingPage() {
       <LandingNav />
       <Hero />
       <Features />
+      <CallJourney />
       <Industries />
       <HowItWorks />
+      <PlatformArchitecture />
       <Pricing />
       <CTA />
       <Footer />

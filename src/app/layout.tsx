@@ -16,7 +16,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NETICS Voice — The AI Employee That Never Misses a Customer",
+  title: "NETICS Voice - The AI Employee That Never Misses a Customer",
   description:
     "NETICS Voice is a multi-tenant AI Customer Operations Platform that automates phone calls, bookings, orders and support across every industry.",
   keywords: [

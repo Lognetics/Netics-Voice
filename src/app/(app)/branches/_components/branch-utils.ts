@@ -20,13 +20,13 @@ export function branchTrend(branch: Branch): number[] {
   });
 }
 
-/** Derived AI resolution rate (0..1) — deterministic per branch. */
+/** Derived AI resolution rate (0..1) - deterministic per branch. */
 export function aiResolution(branch: Branch): number {
   const rng = seededRandom(`res-${branch.id}`);
   return parseFloat((0.78 + rng() * 0.18).toFixed(3));
 }
 
-/** Revenue per staff member — a productivity signal. */
+/** Revenue per staff member - a productivity signal. */
 export function revenuePerStaff(branch: Branch): number {
   return Math.round(branch.monthlyRevenue / Math.max(1, branch.staffCount));
 }

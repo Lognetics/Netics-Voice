@@ -53,7 +53,7 @@ export function SentimentBadge({
   );
 }
 
-/** A confidence meter — a bar that shifts color from red → gold → green. */
+/** A confidence meter - a bar that shifts color from red → gold → green. */
 export function ConfidenceMeter({
   value,
   showLabel = true,

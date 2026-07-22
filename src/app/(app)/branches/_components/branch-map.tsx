@@ -10,7 +10,7 @@ import type { Branch } from "@/types";
 import { STATUS_META } from "./branch-utils";
 
 /**
- * A no-dependency "world map" — plots branches by lat/lng as absolutely
+ * A no-dependency "world map" - plots branches by lat/lng as absolutely
  * positioned dots over a subtle grid, normalized from the branch lat/lng range.
  */
 export function BranchMap({

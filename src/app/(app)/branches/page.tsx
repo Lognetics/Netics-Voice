@@ -41,7 +41,7 @@ export default function BranchesPage() {
     const nb: Branch = {
       id: `br_local_${Date.now()}`,
       orgId: currentOrg.id,
-      name: input.name || `${currentOrg.name} — ${input.city}`,
+      name: input.name || `${currentOrg.name} - ${input.city}`,
       city: input.city,
       country: "USA",
       address: "New location",
@@ -252,7 +252,7 @@ export default function BranchesPage() {
           <CardContent>
             <Donut
               data={regionData}
-              centerValue={topRegion ? `${topRegion.value}%` : "—"}
+              centerValue={topRegion ? `${topRegion.value}%` : "-"}
               centerLabel={topRegion?.name}
             />
             <div className="mt-4 space-y-2">

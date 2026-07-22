@@ -78,7 +78,7 @@ export function NewOrderDialog({ products, onCreate, orgId, branchId }: Props) {
       channel: "webchat",
       createdAt: new Date().toISOString(),
       eta: type === "delivery" ? "30 min" : "15 min",
-      address: type === "delivery" ? "—" : undefined,
+      address: type === "delivery" ? "-" : undefined,
       aiCreated: false,
     };
     onCreate(order);

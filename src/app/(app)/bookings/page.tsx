@@ -84,7 +84,7 @@ import { STATUS_META, ALL_STATUSES } from "./_components/status";
 /* Constants                                                          */
 /* ------------------------------------------------------------------ */
 
-/** Fixed "today" anchor — evaluated once per mount. */
+/** Fixed "today" anchor - evaluated once per mount. */
 const TODAY = new Date();
 
 const RESOURCE_OPTIONS = [
@@ -690,8 +690,7 @@ function CalendarView({
                       </AnimatePresence>
                       {dayItems.length === 0 && (
                         <span className="m-auto text-[11px] text-muted-foreground/50">
-                          —
-                        </span>
+                          -                         </span>
                       )}
                     </div>
                   </div>
@@ -842,7 +841,7 @@ function ListView({
                           </span>
                         </td>
                         <td className="px-3 py-2.5 tabular text-muted-foreground">
-                          {b.partySize ?? "—"}
+                          {b.partySize ?? "-"}
                         </td>
                         <td className="px-3 py-2.5">
                           <Badge variant={meta.variant}>{meta.label}</Badge>
@@ -860,7 +859,7 @@ function ListView({
               </table>
               {rows.length > 80 && (
                 <p className="px-3 py-3 text-center text-xs text-muted-foreground">
-                  Showing first 80 of {rows.length} results — refine your search to
+                  Showing first 80 of {rows.length} results - refine your search to
                   narrow further.
                 </p>
               )}
@@ -1036,7 +1035,7 @@ function BookingDetailDialog({
                 {b.service}
               </InfoRow>
               <InfoRow icon={Users} label="Party size">
-                {b.partySize ?? "—"}
+                {b.partySize ?? "-"}
               </InfoRow>
               <InfoRow icon={DollarSign} label="Price">
                 {formatCurrency(b.price)}{" "}

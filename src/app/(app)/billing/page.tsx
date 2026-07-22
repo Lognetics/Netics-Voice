@@ -102,7 +102,7 @@ export default function BillingPage() {
         <div>
           <h2 className="text-sm font-semibold">Plans</h2>
           <p className="text-sm text-muted-foreground">
-            Upgrade any time — changes are prorated automatically.
+            Upgrade any time - changes are prorated automatically.
           </p>
         </div>
         <PlanCards />

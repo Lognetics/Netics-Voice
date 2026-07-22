@@ -202,7 +202,7 @@ export function CallSidePanel({ call, customer }: { call: Call; customer?: Custo
 
             <Separator />
             <Button variant="ghost" size="sm" className="w-full justify-between" asChild>
-              <Link href="/customers">
+              <Link href={`/customers/${customer.id}`}>
                 View full profile <ArrowUpRight className="h-4 w-4" />
               </Link>
             </Button>

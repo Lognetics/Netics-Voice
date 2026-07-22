@@ -19,7 +19,7 @@ export default function RegisterPage() {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      toast.success("Account created — let's set up your workspace");
+      toast.success("Account created - let's set up your workspace");
       router.push("/onboarding");
     }, 1000);
   }

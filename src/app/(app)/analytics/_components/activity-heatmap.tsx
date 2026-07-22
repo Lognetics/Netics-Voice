@@ -8,7 +8,7 @@ const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const HOURS = Array.from({ length: 24 }, (_, h) => h);
 
 /**
- * Activity heat map — day-of-week × hour grid derived from a seeded PRNG so it
+ * Activity heat map - day-of-week × hour grid derived from a seeded PRNG so it
  * stays deterministic across server/client renders. Values model a
  * restaurant-style traffic curve (lunch + dinner peaks, weekend uplift).
  */
@@ -63,7 +63,7 @@ export function ActivityHeatmap() {
                     transition={{ delay: (d * 24 + h) * 0.0015, duration: 0.25 }}
                     className="group relative h-5 flex-1 rounded-[3px] ring-1 ring-white/[0.04]"
                     style={{ background: cellColor(MATRIX[d][h]) }}
-                    title={`${day} ${h}:00 — ${MATRIX[d][h]} calls`}
+                    title={`${day} ${h}:00 - ${MATRIX[d][h]} calls`}
                   >
                     <span className="pointer-events-none absolute -top-7 left-1/2 z-10 hidden -translate-x-1/2 whitespace-nowrap rounded-md glass px-2 py-1 text-[10px] shadow-soft group-hover:block">
                       {day} {h}:00 · {MATRIX[d][h]} calls

@@ -18,7 +18,7 @@ interface StudioSliderProps {
 }
 
 /**
- * A branded range slider built on <input type="range"> — no new deps.
+ * A branded range slider built on <input type="range"> - no new deps.
  * The filled portion is painted via a CSS gradient background.
  */
 export function StudioSlider({

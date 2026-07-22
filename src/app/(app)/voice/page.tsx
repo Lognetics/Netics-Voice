@@ -101,7 +101,7 @@ export default function VoiceSettingsPage() {
 
   const greeting = React.useMemo(
     () =>
-      `Thanks for calling Bella Cucina! This is ${selectedVoice.name} — how can I help you today?`,
+      `Thanks for calling Bella Cucina! This is ${selectedVoice.name} - how can I help you today?`,
     [selectedVoice.name]
   );
 
@@ -389,7 +389,7 @@ export default function VoiceSettingsPage() {
                 <ToggleRow
                   icon={<Waves className="h-4 w-4 text-brand" />}
                   title="Allow interruptions"
-                  description="Let callers barge in — the AI stops talking and listens instantly."
+                  description="Let callers barge in - the AI stops talking and listens instantly."
                   checked={interruptions}
                   onCheckedChange={setInterruptions}
                 />
@@ -420,13 +420,13 @@ export default function VoiceSettingsPage() {
             <CardContent className="space-y-4">
               <p className="text-sm text-muted-foreground">
                 Describe your brand&apos;s personality. Your AI mirrors this
-                voice in every conversation — word choice, warmth and energy.
+                voice in every conversation - word choice, warmth and energy.
               </p>
               <Textarea
                 value={brandVoice}
                 onChange={(e) => setBrandVoice(e.target.value)}
                 rows={4}
-                placeholder="e.g. Warm, upbeat, and quick to recommend specials — never pushy."
+                placeholder="e.g. Warm, upbeat, and quick to recommend specials - never pushy."
               />
               <div className="flex flex-wrap gap-2">
                 {[

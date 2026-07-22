@@ -68,7 +68,7 @@ export function PlanCards() {
                 disabled={isCurrent}
                 onClick={() =>
                   isEnterprise
-                    ? toast.success("Sales team notified — we'll reach out shortly")
+                    ? toast.success("Sales team notified - we'll reach out shortly")
                     : toast.success(`Upgrade to ${plan.name} requested`)
                 }
               >

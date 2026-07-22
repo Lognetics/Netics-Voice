@@ -64,14 +64,14 @@ export const INDUSTRY_TEMPLATES: IndustryTemplate[] = [
     industry: "restaurant",
     label: "Restaurant",
     icon: "UtensilsCrossed",
-    tagline: "Take orders, book tables, upsell — 24/7.",
+    tagline: "Take orders, book tables, upsell - 24/7.",
     color: "#FF4D4F",
     knowledgeCategories: ["Menu", "Allergens", "Promotions", "Delivery Zones"],
     sampleIntents: ["Place order", "Reserve table", "Ask menu", "Track delivery"],
     bookingFields: ["Party size", "Date & time", "Seating preference"],
     orderFlow: ["Browse menu", "Add items", "Upsell", "Confirm", "Pay"],
     greeting:
-      "Thanks for calling Bella Cucina! I can take your order or book a table — what can I get started for you?",
+      "Thanks for calling Bella Cucina! I can take your order or book a table - what can I get started for you?",
     sampleConversation: [
       { role: "customer", text: "Hi, I'd like to order a large pepperoni pizza." },
       {
@@ -81,7 +81,7 @@ export const INDUSTRY_TEMPLATES: IndustryTemplate[] = [
       { role: "customer", text: "Sure, that sounds good." },
       {
         role: "ai",
-        text: "Perfect. That's one large pepperoni combo — $18.90. Delivery to your usual address on Oak Street?",
+        text: "Perfect. That's one large pepperoni combo - $18.90. Delivery to your usual address on Oak Street?",
       },
     ],
   },
@@ -96,12 +96,12 @@ export const INDUSTRY_TEMPLATES: IndustryTemplate[] = [
     bookingFields: ["Check-in", "Check-out", "Guests", "Room type"],
     orderFlow: ["Check availability", "Recommend room", "Add extras", "Confirm", "Pay"],
     greeting:
-      "Welcome to The Grand Aurora. I can check availability and book your perfect room — when are you planning to stay?",
+      "Welcome to The Grand Aurora. I can check availability and book your perfect room - when are you planning to stay?",
     sampleConversation: [
       { role: "customer", text: "I need a room for this weekend." },
       {
         role: "ai",
-        text: "We have three options available. Based on your stay, I'd recommend the Executive Suite — only $30 more and it includes breakfast and airport pickup.",
+        text: "We have three options available. Based on your stay, I'd recommend the Executive Suite - only $30 more and it includes breakfast and airport pickup.",
       },
     ],
   },
@@ -141,7 +141,7 @@ export const INDUSTRY_TEMPLATES: IndustryTemplate[] = [
       { role: "customer", text: "I'm looking for a 2-bedroom apartment downtown." },
       {
         role: "ai",
-        text: "I have four listings that match. The one on 5th Ave has a rooftop pool and is within your budget — would you like to book a viewing this week?",
+        text: "I have four listings that match. The one on 5th Ave has a rooftop pool and is within your budget - would you like to book a viewing this week?",
       },
     ],
   },
@@ -181,7 +181,7 @@ export const INDUSTRY_TEMPLATES: IndustryTemplate[] = [
       { role: "customer", text: "I lost my card and need to block it." },
       {
         role: "ai",
-        text: "I understand — let's secure your account right away. I've verified your identity and blocked the card ending 4471. A replacement will arrive in 3 days.",
+        text: "I understand - let's secure your account right away. I've verified your identity and blocked the card ending 4471. A replacement will arrive in 3 days.",
       },
     ],
   },
@@ -221,7 +221,7 @@ export const INDUSTRY_TEMPLATES: IndustryTemplate[] = [
       { role: "customer", text: "Is there a spin class tonight?" },
       {
         role: "ai",
-        text: "Yes! 7pm with Coach Dee — 3 spots left. Want me to reserve one for you?",
+        text: "Yes! 7pm with Coach Dee - 3 spots left. Want me to reserve one for you?",
       },
     ],
   },

@@ -80,7 +80,7 @@ export function FlowBuilder() {
     }
     setActiveIdx(-1);
     setSimulating(false);
-    toast.success("Flow dry-run complete — all paths valid ✓");
+    toast.success("Flow dry-run complete - all paths valid ✓");
   }
 
   return (
@@ -226,7 +226,7 @@ export function FlowBuilder() {
             animate={{ opacity: 1 }}
             className="flex items-center gap-2 text-sm text-muted-foreground"
           >
-            <MessageSquare className="h-4 w-4" /> Flow is empty — add a step to begin.
+            <MessageSquare className="h-4 w-4" /> Flow is empty - add a step to begin.
           </motion.p>
         )}
       </AnimatePresence>

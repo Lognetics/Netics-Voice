@@ -40,7 +40,7 @@ export default function EmployeesPage() {
   const [profileOpen, setProfileOpen] = React.useState(false);
 
   const branchCity = React.useCallback(
-    (branchId?: string) => branches.find((b) => b.id === branchId)?.city ?? "—",
+    (branchId?: string) => branches.find((b) => b.id === branchId)?.city ?? "-",
     []
   );
 
@@ -286,7 +286,7 @@ export default function EmployeesPage() {
                             <Badge variant={role.badge}>{role.label}</Badge>
                           </td>
                           <td className="px-3 py-2.5 text-muted-foreground">
-                            {p.department ?? "—"}
+                            {p.department ?? "-"}
                           </td>
                           <td className="px-3 py-2.5 text-muted-foreground">
                             {branchCity(p.branchId)}
@@ -304,7 +304,7 @@ export default function EmployeesPage() {
                             {p.callsHandled.toLocaleString()}
                           </td>
                           <td className="px-3 py-2.5 text-right tabular">
-                            {p.csat > 0 ? p.csat.toFixed(1) : "—"}
+                            {p.csat > 0 ? p.csat.toFixed(1) : "-"}
                           </td>
                           <td className="px-3 py-2.5 text-xs text-muted-foreground">
                             {timeAgo(p.lastActive)}

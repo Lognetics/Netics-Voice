@@ -9,7 +9,7 @@ interface SparklineProps {
   className?: string;
 }
 
-/** Lightweight inline SVG sparkline — no chart library overhead. */
+/** Lightweight inline SVG sparkline - no chart library overhead. */
 export function Sparkline({
   data,
   stroke = "#3A86FF",

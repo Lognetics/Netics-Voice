@@ -97,9 +97,9 @@ export function EmployeeProfileDialog({
           {/* Performance */}
           <TabsContent value="performance" className="space-y-4 pt-4">
             <div className="grid gap-4 text-sm sm:grid-cols-3">
-              <Detail icon={Building2} label="Department" value={user.department ?? "—"} />
-              <Detail icon={MapPin} label="Branch" value={branchCity ?? "—"} />
-              <Detail icon={Phone} label="Phone" value={user.phone ?? "—"} />
+              <Detail icon={Building2} label="Department" value={user.department ?? "-"} />
+              <Detail icon={MapPin} label="Branch" value={branchCity ?? "-"} />
+              <Detail icon={Phone} label="Phone" value={user.phone ?? "-"} />
             </div>
             <div>
               <p className="mb-1 flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -124,7 +124,7 @@ export function EmployeeProfileDialog({
           {/* Takeovers */}
           <TabsContent value="takeovers" className="pt-4">
             <p className="mb-3 flex items-center gap-1.5 text-xs text-muted-foreground">
-              <History className="h-3.5 w-3.5" /> Human takeover history — when this
+              <History className="h-3.5 w-3.5" /> Human takeover history - when this
               agent stepped in for the AI
             </p>
             <div className="space-y-2">

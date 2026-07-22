@@ -26,11 +26,11 @@ export class MockAIProvider implements AIProvider {
   private canned(prompt: string) {
     const p = prompt.toLowerCase();
     if (p.includes("book") || p.includes("table") || p.includes("room"))
-      return "Absolutely — I can book that for you. I have availability Saturday at 7pm or Sunday at 1pm. Which works best?";
+      return "Absolutely - I can book that for you. I have availability Saturday at 7pm or Sunday at 1pm. Which works best?";
     if (p.includes("order") || p.includes("pizza"))
       return "Great choice! Would you like to make it a combo with garlic bread and a drink for just $4 more?";
     if (p.includes("refund") || p.includes("cancel"))
-      return "I'm sorry about that — let me make it right. I've processed your request and added a credit to your account.";
+      return "I'm sorry about that - let me make it right. I've processed your request and added a credit to your account.";
     return "Of course, I'd be happy to help with that. Could you share a little more detail so I can assist accurately?";
   }
 

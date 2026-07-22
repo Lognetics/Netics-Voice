@@ -45,6 +45,14 @@
     scroll-behavior: smooth;
   }
 
+  /* Reduce the root font size by 20% on mobile so all rem-based
+     typography and spacing scale down proportionally on small screens. */
+  @media (max-width: 767.98px) {
+    html {
+      font-size: 80%;
+    }
+  }
+
   body {
     @apply bg-base-bg text-foreground font-sans antialiased;
     background-image:

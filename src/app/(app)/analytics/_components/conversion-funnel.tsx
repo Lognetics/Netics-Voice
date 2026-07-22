@@ -11,7 +11,7 @@ interface Stage {
 }
 
 /**
- * Conversion funnel — custom stacked bars. Widths are proportional to the top
+ * Conversion funnel - custom stacked bars. Widths are proportional to the top
  * stage; drop-off vs. the previous stage is annotated on the right.
  */
 export function ConversionFunnel({ stages }: { stages: Stage[] }) {

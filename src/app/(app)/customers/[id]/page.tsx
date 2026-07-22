@@ -50,6 +50,7 @@ export default function CustomerProfilePage({
   params: { id: string };
 }) {
   const customer = customers.find((c) => c.id === params.id);
+  const [activeTab, setActiveTab] = React.useState("overview");
 
   if (!customer) {
     return (
@@ -166,7 +167,10 @@ export default function CustomerProfilePage({
               </Button>
               <Button
                 variant="outline"
-                onClick={() => toast("Note editor opened below.")}
+                onClick={() => {
+                  setActiveTab("notes");
+                  toast("Note editor opened below.");
+                }}
               >
                 <Plus className="h-4 w-4" /> Add note
               </Button>
@@ -230,7 +234,7 @@ export default function CustomerProfilePage({
                     </span>
                   </>
                 ) : (
-                  "Top tier reached — highest loyalty status."
+                  "Top tier reached - highest loyalty status."
                 )}
               </p>
             </CardContent>
@@ -291,7 +295,7 @@ export default function CustomerProfilePage({
                       </Badge>
                     ))
                   ) : (
-                    <span className="text-muted-foreground">—</span>
+                    <span className="text-muted-foreground">-</span>
                   )}
                 </div>
               </div>
@@ -308,7 +312,7 @@ export default function CustomerProfilePage({
                       </Badge>
                     ))
                   ) : (
-                    <span className="text-muted-foreground">—</span>
+                    <span className="text-muted-foreground">-</span>
                   )}
                 </div>
               </div>
@@ -323,6 +327,8 @@ export default function CustomerProfilePage({
             calls={customerCalls}
             orders={customerOrders}
             bookings={customerBookings}
+            tab={activeTab}
+            onTabChange={setActiveTab}
           />
         </div>
       </div>
@@ -362,7 +368,7 @@ function DetailRow({
         {icon}
         {label}
       </span>
-      <span className="text-right font-medium">{value || "—"}</span>
+      <span className="text-right font-medium">{value || "-"}</span>
     </div>
   );
 }

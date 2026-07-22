@@ -185,7 +185,7 @@ export default function KnowledgePage() {
         )
       );
       toast.success("Document indexed", {
-        description: "AI comprehension complete — now searchable.",
+        description: "AI comprehension complete - now searchable.",
       });
     }, 2600);
   }
@@ -236,7 +236,7 @@ export default function KnowledgePage() {
     <div className="space-y-6">
       <PageHeader
         title="Knowledge Base"
-        description="Everything your AI knows — documents, policies and menus, auto-indexed."
+        description="Everything your AI knows - documents, policies and menus, auto-indexed."
         icon={<Library className="h-5 w-5" />}
         actions={
           <>
@@ -654,7 +654,7 @@ function VersionHistoryDialog({
         by: doc.uploadedBy,
         note:
           v === doc.version
-            ? "Current version — indexed and live."
+            ? "Current version - indexed and live."
             : v === 1
             ? "Initial upload."
             : "Content updated and re-indexed.",

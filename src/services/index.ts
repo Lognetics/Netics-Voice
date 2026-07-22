@@ -4,7 +4,7 @@
  * Resolves the active implementation of each service interface.
  * The prototype always returns the `mock` provider. In production,
  * switch on env config (e.g. AI_PROVIDER=openai) and return the
- * matching adapter — application code never imports a concrete
+ * matching adapter - application code never imports a concrete
  * provider directly, only these accessors.
  */
 

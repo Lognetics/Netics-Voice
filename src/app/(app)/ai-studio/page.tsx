@@ -59,7 +59,7 @@ type SectionId = (typeof SECTIONS)[number]["id"];
 /* ------------------------------------------------------------------ */
 
 export default function AIStudioPage() {
-  // In-memory editable copies — never mutate the mock db.
+  // In-memory editable copies - never mutate the mock db.
   const [agents, setAgents] = React.useState<AIAgent[]>(() =>
     aiAgents.map((a) => ({ ...a, escalationRules: a.escalationRules.map((r) => ({ ...r })) }))
   );
@@ -99,7 +99,7 @@ export default function AIStudioPage() {
       <PageHeader
         icon={<Sparkles className="h-5 w-5" />}
         title="AI Studio"
-        description="Design, tune and test your AI employees — no code required."
+        description="Design, tune and test your AI employees - no code required."
         actions={
           <>
             <Badge variant="secondary" className="hidden sm:inline-flex">
@@ -304,7 +304,7 @@ function AgentsSection({
 
       {/* Create-new placeholder */}
       <button
-        onClick={() => toast("Agent templates coming soon — clone an existing agent to start.")}
+        onClick={() => toast("Agent templates coming soon - clone an existing agent to start.")}
         className="flex min-h-[220px] flex-col items-center justify-center rounded-2xl border border-dashed border-white/[0.10] text-center transition-colors hover:border-brand/40 hover:bg-brand/[0.03]"
       >
         <div className="grid h-12 w-12 place-items-center rounded-xl bg-white/[0.04]">
@@ -468,7 +468,7 @@ function PersonaSection({
             <div>
               <p className="text-sm font-medium">Allow interruptions</p>
               <p className="text-xs text-muted-foreground">
-                Let callers barge in — the agent stops and listens.
+                Let callers barge in - the agent stops and listens.
               </p>
             </div>
             <Switch

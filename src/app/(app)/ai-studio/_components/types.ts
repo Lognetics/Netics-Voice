@@ -12,7 +12,7 @@ export interface FlowNode {
     | "escalate";
   label: string;
   detail: string;
-  /** Only for branch nodes — the branch options that fan out. */
+  /** Only for branch nodes - the branch options that fan out. */
   branches?: string[];
 }
 

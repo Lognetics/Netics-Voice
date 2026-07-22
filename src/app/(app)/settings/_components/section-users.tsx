@@ -191,7 +191,7 @@ export function SectionUsers({ onDirty }: { onDirty: () => void }) {
                     </div>
                   </td>
                   <td className="hidden px-4 py-2.5 text-muted-foreground sm:table-cell">
-                    {u.department ?? "—"}
+                    {u.department ?? "-"}
                   </td>
                   <td className="px-4 py-2.5">
                     <Badge variant={ROLE_VARIANT[u.role]} className="capitalize">

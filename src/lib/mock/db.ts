@@ -1,5 +1,5 @@
 /**
- * NETICS Voice — Deterministic Mock Database
+ * NETICS Voice - Deterministic Mock Database
  * -------------------------------------------------------------
  * Generates a rich, self-consistent dataset at module load using a
  * seeded PRNG so values never drift between server and client renders.
@@ -165,7 +165,7 @@ export const branches: Branch[] = Array.from({ length: 6 }, (_, i) => {
   return {
     id: id("br", i),
     orgId: currentOrg.id,
-    name: `Bella Cucina — ${loc.city}`,
+    name: `Bella Cucina - ${loc.city}`,
     city: loc.city,
     country: loc.country,
     address: `${int(10, 990)} ${pick(["Oak", "Main", "Park", "River", "5th"])} St`,
@@ -256,12 +256,12 @@ export const customers: Customer[] = Array.from({ length: 500 }, (_, i) => {
     favoriteProducts: [pick(RESTAURANT_ITEMS).name, pick(RESTAURANT_ITEMS).name],
     isVip,
     aiInsight: pick([
-      "Frequently orders on Friday evenings — good target for weekend promos.",
+      "Frequently orders on Friday evenings - good target for weekend promos.",
       "Prefers phone over chat. High responsiveness to upsells.",
-      "At risk of churn — no orders in 45 days. Suggest win-back offer.",
+      "At risk of churn - no orders in 45 days. Suggest win-back offer.",
       "High lifetime value. Prioritize for VIP handling.",
       "Sensitive to wait times; route to fastest branch.",
-      "Loyalty points near reward threshold — nudge to redeem.",
+      "Loyalty points near reward threshold - nudge to redeem.",
     ]),
     notes: chance(0.3) ? "Allergic to shellfish. Prefers window seating." : undefined,
   };
@@ -289,22 +289,22 @@ function buildTranscript(intent: string, name: string): Call["transcript"] {
     push("customer", "Hi, I'd like to order a large pepperoni pizza.", "neutral");
     push("ai", "Great choice! Would you like to make it a combo with garlic bread and a drink for just $4 more?");
     push("customer", "Yeah, let's do that.", "positive");
-    push("ai", "Perfect — that's one large pepperoni combo for $18.90. Delivery to your usual address on Oak Street?");
+    push("ai", "Perfect - that's one large pepperoni combo for $18.90. Delivery to your usual address on Oak Street?");
     push("customer", "Yes please.", "positive");
     push("ai", "All set! Your order will arrive in about 35 minutes. Anything else?");
   } else if (intent === "Reserve table" || intent === "Book room" || intent === "Book appointment") {
     push("customer", `Hi, I'd like to ${intent.toLowerCase()} for this weekend.`, "neutral");
-    push("ai", "Absolutely. I have availability on Saturday at 7pm or Sunday at 1pm — which works best?");
+    push("ai", "Absolutely. I have availability on Saturday at 7pm or Sunday at 1pm - which works best?");
     push("customer", "Saturday at 7 sounds perfect.", "positive");
     push("ai", `Wonderful, ${name}. I've reserved that for you and sent a confirmation by text. See you then!`);
   } else if (intent === "Complaint" || intent === "Request refund") {
     push("customer", "My last order was cold and an item was missing.", "frustrated");
-    push("ai", "I'm really sorry about that — let me make it right. I've issued a full refund and added a $10 credit to your account.", "neutral");
+    push("ai", "I'm really sorry about that - let me make it right. I've issued a full refund and added a $10 credit to your account.", "neutral");
     push("customer", "Okay, thank you. That helps.", "neutral");
-    push("agent", "Hi, this is Maria from the team — I'll personally follow up to ensure your next order is perfect.");
+    push("agent", "Hi, this is Maria from the team - I'll personally follow up to ensure your next order is perfect.");
   } else {
     push("customer", "Hi, I have a quick question about my account.", "neutral");
-    push("ai", "Of course — I'd be happy to help with that. Could you confirm the phone number on file?");
+    push("ai", "Of course - I'd be happy to help with that. Could you confirm the phone number on file?");
     push("customer", "Sure, it ends in 4471.", "neutral");
     push("ai", "Thank you! I've pulled up your details. Here's what I found...");
   }
@@ -457,7 +457,7 @@ export const bookings: Booking[] = Array.from({ length: 260 }, (_, i) => {
     channel: pick(CHANNELS),
     aiCreated: chance(0.8),
     recurring: chance(0.15),
-    notes: chance(0.25) ? "Anniversary — window table requested." : undefined,
+    notes: chance(0.25) ? "Anniversary - window table requested." : undefined,
   };
 });
 
@@ -540,7 +540,7 @@ export const notifications: AppNotification[] = Array.from({ length: 24 }, (_, i
   const type = pick(NOTIF_TYPES);
   const map: Record<AppNotification["type"], { title: string; body: string }> = {
     call: { title: "Escalated call", body: "A customer requested a human agent for a refund." },
-    order: { title: "New order via AI", body: "Order BC-48213 placed on WhatsApp — $42.50." },
+    order: { title: "New order via AI", body: "Order BC-48213 placed on WhatsApp - $42.50." },
     booking: { title: "Booking confirmed", body: "Table for 4 reserved Saturday 7:00 PM." },
     system: { title: "Knowledge indexed", body: "Full Menu 2026.pdf finished processing (98% confidence)." },
     billing: { title: "Invoice paid", body: "Your July invoice of $1,240 was paid." },
@@ -681,7 +681,7 @@ export const aiAgents: AIAgent[] = [
   {
     id: "agent_0001",
     orgId: currentOrg.id,
-    name: "Aria — Front of House",
+    name: "Aria - Front of House",
     voice: "Aria",
     language: "English",
     personality: currentOrg.aiPersonality,
@@ -703,7 +703,7 @@ export const aiAgents: AIAgent[] = [
   {
     id: "agent_0002",
     orgId: currentOrg.id,
-    name: "Atlas — Reservations",
+    name: "Atlas - Reservations",
     voice: "Atlas",
     language: "English",
     personality: "Efficient and precise for booking flows.",
@@ -715,7 +715,7 @@ export const aiAgents: AIAgent[] = [
     emotionLevel: 0.5,
     callsHandled: 9310,
     resolutionRate: 0.92,
-    greeting: "Thanks for calling — I can check availability and book that for you right now.",
+    greeting: "Thanks for calling - I can check availability and book that for you right now.",
     escalationRules: [
       { id: "er4", trigger: "Group > 12", condition: "party_size > 12", action: "callback", target: "Events team", enabled: true },
     ],

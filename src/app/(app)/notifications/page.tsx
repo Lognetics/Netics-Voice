@@ -92,7 +92,7 @@ export default function NotificationsPage() {
 
   const markAllRead = () => {
     if (unreadCount === 0) {
-      toast.info("You're all caught up — no unread notifications.");
+      toast.info("You're all caught up - no unread notifications.");
       return;
     }
     setItems((prev) => prev.map((n) => ({ ...n, read: true })));

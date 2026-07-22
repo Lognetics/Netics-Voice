@@ -99,7 +99,7 @@ export function statusMeta(status: string) {
   return statusBadge[status] ?? { label: status, variant: "secondary" as const };
 }
 
-/** Small colored dot mapped to sentiment — used for compact list rows. */
+/** Small colored dot mapped to sentiment - used for compact list rows. */
 export function sentimentDotColor(sentiment: string): string {
   switch (sentiment) {
     case "positive":

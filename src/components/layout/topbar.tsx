@@ -88,7 +88,7 @@ export function Topbar() {
         onClick={() => {
           toggleAI();
           toast[aiPaused ? "success" : "warning"](
-            aiPaused ? "AI resumed — now answering calls" : "AI paused — calls route to staff"
+            aiPaused ? "AI resumed - now answering calls" : "AI paused - calls route to staff"
           );
         }}
         className="hidden sm:inline-flex"

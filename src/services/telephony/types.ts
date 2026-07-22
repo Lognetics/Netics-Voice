@@ -1,4 +1,4 @@
-/** TelephonyProvider — abstracts Twilio / Vonage / SIP trunk. */
+/** TelephonyProvider - abstracts Twilio / Vonage / SIP trunk. */
 export interface TelephonyProvider {
   /** Place an outbound call (reminders, follow-ups). */
   dial(to: string, from: string): Promise<{ callSid: string }>;

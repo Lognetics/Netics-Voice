@@ -13,7 +13,7 @@ export default function NotFound() {
         <p className="mt-10 text-7xl font-semibold tracking-tight text-gradient-brand">404</p>
         <h1 className="mt-4 text-xl font-semibold">This line went quiet.</h1>
         <p className="mx-auto mt-2 max-w-sm text-muted-foreground">
-          The page you&rsquo;re looking for doesn&rsquo;t exist — but your AI employee is still
+          The page you&rsquo;re looking for doesn&rsquo;t exist - but your AI employee is still
           answering every call.
         </p>
         <div className="mt-8 flex items-center justify-center gap-3">

@@ -104,7 +104,7 @@ export default function InboxPage() {
     <div className="space-y-6">
       <PageHeader
         title="Omnichannel Inbox"
-        description="Every customer conversation — phone, chat, and social — in one unified thread."
+        description="Every customer conversation - phone, chat, and social - in one unified thread."
         icon={<InboxIcon className="h-5 w-5" />}
         actions={
           <Badge variant="secondary" className="gap-1.5">

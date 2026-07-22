@@ -67,7 +67,7 @@ export function AddBranchDialog({
             <Label htmlFor="br-name">Branch name</Label>
             <Input
               id="br-name"
-              placeholder="Bella Cucina — Downtown"
+              placeholder="Bella Cucina - Downtown"
               value={form.name}
               onChange={set("name")}
             />

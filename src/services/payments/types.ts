@@ -1,4 +1,4 @@
-/** PaymentProvider — abstracts Stripe / Paystack / Flutterwave. */
+/** PaymentProvider - abstracts Stripe / Paystack / Flutterwave. */
 export interface PaymentProvider {
   charge(amount: number, currency: string, source: string): Promise<PaymentResult>;
   createSubscription(planId: string, customerId: string): Promise<{ subscriptionId: string }>;

@@ -1,3 +1,5 @@
+import { NOW } from "@/lib/constants";
+
 export type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
 
 export interface RequestLog {
@@ -44,7 +46,7 @@ export const requestLogs: RequestLog[] = Array.from({ length: 14 }, (_, i) => {
     endpoint: ep.path,
     status,
     latency: 40 + ((i * 37) % 380),
-    timestamp: new Date(Date.now() - (i * 47 + 3) * 60_000).toISOString(),
+    timestamp: new Date(NOW.getTime() - (i * 47 + 3) * 60_000).toISOString(),
   };
 });
 

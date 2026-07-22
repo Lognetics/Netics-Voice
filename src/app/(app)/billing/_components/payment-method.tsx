@@ -66,7 +66,7 @@ export function PaymentMethodCard() {
           <DialogHeader>
             <DialogTitle>Add payment method</DialogTitle>
             <DialogDescription>
-              Cards are securely tokenized — we never store raw numbers.
+              Cards are securely tokenized - we never store raw numbers.
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-3">

@@ -75,16 +75,24 @@ export function ProfileTabs({
   calls,
   orders,
   bookings,
+  tab,
+  onTabChange,
 }: {
   customer: Customer;
   calls: Call[];
   orders: Order[];
   bookings: Booking[];
+  tab?: string;
+  onTabChange?: (value: string) => void;
 }) {
   const history = React.useMemo(() => ltvHistory(customer), [customer]);
 
   return (
-    <Tabs defaultValue="overview">
+    <Tabs
+      value={tab}
+      defaultValue="overview"
+      onValueChange={onTabChange}
+    >
       <TabsList className="flex-wrap">
         <TabsTrigger value="overview">Overview</TabsTrigger>
         <TabsTrigger value="conversations">

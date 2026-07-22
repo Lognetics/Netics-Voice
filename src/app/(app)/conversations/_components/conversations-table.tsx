@@ -101,7 +101,7 @@ export function ConversationsTable({
                   <SentimentBadge sentiment={c.sentiment} showEmoji={false} />
                 </td>
                 <td className="px-4 py-3 text-xs text-muted-foreground">
-                  {c.assignedTo ?? "—"}
+                  {c.assignedTo ?? "-"}
                 </td>
                 <td className="px-4 py-3">
                   {c.aiHandled ? (

@@ -25,7 +25,7 @@ const QUICK_REPLIES = [
 ];
 
 const AI_REPLIES = [
-  "Got it — I've taken care of that for you.",
+  "Got it - I've taken care of that for you.",
   "I've updated your booking and sent a confirmation.",
   "Happy to help! Anything else you need?",
   "That's all set. You'll receive a text shortly.",

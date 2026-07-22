@@ -3,7 +3,7 @@
 Every external capability in NETICS Voice is accessed through a **provider-agnostic
 interface** defined here. The prototype ships a `mock` implementation of each; swapping
 in a production provider (Twilio, OpenAI, Stripe…) means implementing the same interface
-and registering it — **no application code changes**.
+and registering it - **no application code changes**.
 
 ```
 services/
@@ -12,7 +12,7 @@ services/
   messaging/     WhatsApp, SMS, Instagram, Messenger, Telegram
   payments/      Stripe / Paystack / Flutterwave charge + subscription
   storage/       S3-compatible object storage for knowledge docs
-  index.ts       Provider registry — resolves the active implementation
+  index.ts       Provider registry - resolves the active implementation
 ```
 
 ## Contract-first design

@@ -38,14 +38,15 @@ export function WebhooksTab() {
       toast.error("Endpoint URL is required");
       return;
     }
+    const parsedEvents = events
+      .split(",")
+      .map((e) => e.trim())
+      .filter(Boolean);
     setHooks((prev) => [
       {
         id: `wh_${Date.now()}`,
         url: url.trim(),
-        events: events
-          .split(",")
-          .map((e) => e.trim())
-          .filter(Boolean) || ["call.completed"],
+        events: parsedEvents.length ? parsedEvents : ["call.completed"],
         status: "active",
         secret: `whsec_••••${Math.floor(1000 + Math.random() * 8999)}`,
         createdAt: new Date().toISOString(),

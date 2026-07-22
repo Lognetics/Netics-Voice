@@ -26,12 +26,12 @@ const fadeUp = {
 const features = [
   { icon: PhoneCall, title: "AI Voice Engine", desc: "Natural conversations with interruptions, emotion and context memory across 150+ languages.", accent: "text-brand" },
   { icon: BrainCircuit, title: "AI Studio", desc: "A no-code builder for conversation flows, personas and escalation rules. No engineers required.", accent: "text-success" },
-  { icon: BookOpen, title: "Knowledge Engine", desc: "Upload menus, PDFs, price lists or a URL — the AI learns everything instantly with RAG.", accent: "text-gold-soft" },
+  { icon: BookOpen, title: "Knowledge Engine", desc: "Upload menus, PDFs, price lists or a URL - the AI learns everything instantly with RAG.", accent: "text-gold-soft" },
   { icon: CalendarCheck, title: "Booking Engine", desc: "Availability, resources, reminders and waitlists for hotels, clinics, salons and more.", accent: "text-brand" },
   { icon: ShoppingCart, title: "Order Management", desc: "Take, track and upsell orders end-to-end with kitchen status and delivery routing.", accent: "text-success" },
   { icon: Users, title: "Unified CRM", desc: "Every caller gets a profile, history, preferences and AI-generated insights automatically.", accent: "text-gold-soft" },
   { icon: BarChart3, title: "Conversation Intelligence", desc: "Sentiment, intent, confidence scoring and demand forecasting on every interaction.", accent: "text-brand" },
-  { icon: Languages, title: "Omnichannel", desc: "One AI across phone, WhatsApp, Instagram, SMS, web chat and email — a single inbox.", accent: "text-success" },
+  { icon: Languages, title: "Omnichannel", desc: "One AI across phone, WhatsApp, Instagram, SMS, web chat and email - a single inbox.", accent: "text-success" },
 ];
 
 export function Features() {
@@ -46,7 +46,7 @@ export function Features() {
           </h2>
           <p className="mt-4 text-muted-foreground">
             NETICS understands conversations, executes business workflows, and learns from
-            every interaction — giving you one operational brain for customer engagement.
+            every interaction - giving you one operational brain for customer engagement.
           </p>
         </motion.div>
 
@@ -137,7 +137,7 @@ export function HowItWorks() {
         <motion.div {...fadeUp} className="mx-auto max-w-2xl text-center">
           <Badge variant="secondary" className="mb-4">Live in minutes</Badge>
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            From setup to answering calls — fast
+            From setup to answering calls - fast
           </h2>
         </motion.div>
         <div className="mt-14 grid gap-4 md:grid-cols-4">

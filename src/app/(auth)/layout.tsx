@@ -11,7 +11,7 @@ export default function AuthLayout({
 }) {
   return (
     <div className="grid min-h-screen lg:grid-cols-2">
-      {/* Left — form */}
+      {/* Left - form */}
       <div className="flex flex-col px-6 py-8 sm:px-12">
         <Link href="/" className="inline-flex">
           <Logo />
@@ -24,7 +24,7 @@ export default function AuthLayout({
         </p>
       </div>
 
-      {/* Right — brand panel */}
+      {/* Right - brand panel */}
       <div className="relative hidden overflow-hidden lg:block">
         <div className="absolute inset-0 bg-mesh" />
         <div className="absolute inset-0 bg-grid opacity-40" />
@@ -38,7 +38,7 @@ export default function AuthLayout({
             The AI Employee that never misses a customer.
           </h2>
           <p className="mt-4 max-w-md text-muted-foreground">
-            Answer every call, book every table, take every order — in 150+ languages,
+            Answer every call, book every table, take every order - in 150+ languages,
             across every channel, 24/7.
           </p>
 
@@ -49,7 +49,7 @@ export default function AuthLayout({
             </div>
             <VoiceWaveform active bars={32} className="mt-3 h-8 w-64" />
             <p className="mt-3 text-sm">
-              &ldquo;Perfect — I&rsquo;ve booked your table for four at 7pm. 🎉&rdquo;
+              &ldquo;Perfect - I&rsquo;ve booked your table for four at 7pm. 🎉&rdquo;
             </p>
           </div>
 

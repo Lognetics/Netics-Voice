@@ -1,7 +1,7 @@
 import type { Sentiment, Entity } from "@/types";
 
 /**
- * AIProvider — the single seam between NETICS and any LLM/voice stack.
+ * AIProvider - the single seam between NETICS and any LLM/voice stack.
  * Production adapters (OpenAI, Anthropic, Deepgram, ElevenLabs) implement this.
  */
 export interface AIProvider {
@@ -17,7 +17,7 @@ export interface AIProvider {
   retrieve(query: string, opts?: { topK?: number }): Promise<RetrievedChunk[]>;
   /** Summarize a completed conversation. */
   summarize(transcript: string): Promise<CallSummary>;
-  /** Text-to-Speech — returns an audio stream URL (mock returns a placeholder). */
+  /** Text-to-Speech - returns an audio stream URL (mock returns a placeholder). */
   synthesizeSpeech(text: string, voice: string): Promise<{ audioUrl: string }>;
   /** Speech-to-Text over a streaming audio source. */
   transcribeStream(source: AudioSource): AsyncIterable<TranscriptChunk>;

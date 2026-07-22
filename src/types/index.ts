@@ -1,5 +1,5 @@
 /**
- * NETICS Voice — Domain Types
+ * NETICS Voice - Domain Types
  * -------------------------------------------------------------
  * A single source of truth for every entity in the platform.
  * These map 1:1 to the planned PostgreSQL schema (see docs/ARCHITECTURE.md)
